@@ -25,7 +25,11 @@ const List = ({ token }) => {
       const response = await axios.post(
         backendUrl + "/api/product/remove",
         { id },
-        { headers: { token } },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
       );
       if (response.data.success) {
         toast.success(response.data.message);

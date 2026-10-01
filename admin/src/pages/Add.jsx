@@ -42,7 +42,9 @@ const Add = ({ token }) => {
         backendUrl + "/api/product/add",
         formData,
         {
-          headers: { token },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
       );
 
